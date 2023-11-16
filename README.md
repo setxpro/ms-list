@@ -76,7 +76,7 @@ GET /lists/{listId}/games - Find all games from a specific list games
 In progress
 
 ## Database
-The project utilizes [PostgresSQL](https://www.postgresql.org/) as the database. The necessary database migrations are managed using Flyway.
+The project utilizes [PostgresSQL](https://www.postgresql.org/) as the database.
 
 ## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request to the repository.
