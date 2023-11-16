@@ -1,7 +1,7 @@
 package com.aliendev.mslist.dtos;
 
 import com.aliendev.mslist.entities.Game;
-import org.springframework.beans.BeanUtils;
+import com.aliendev.mslist.projections.GameMinProjection;
 
 public class GameMinDTO {
     private Long id;
@@ -12,8 +12,21 @@ public class GameMinDTO {
 
     public GameMinDTO() {}
     public GameMinDTO(Game entity) {
-        BeanUtils.copyProperties(entity, this);
+        id = entity.getId();
+        title = entity.getTitle();
+        year = entity.getYear();
+        imgUrl = entity.getImgUrl();
+        shortDescription = entity.getShortDescription();
     }
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getGameYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
+    }
+
+
 
     public Long getId() {
         return id;

@@ -3,6 +3,7 @@ package com.aliendev.mslist.services;
 import com.aliendev.mslist.dtos.GameDTO;
 import com.aliendev.mslist.dtos.GameMinDTO;
 import com.aliendev.mslist.entities.Game;
+import com.aliendev.mslist.projections.GameMinProjection;
 import com.aliendev.mslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,4 +35,9 @@ public class GameService {
 //        return gameRepository.findById(id);
     }
 
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findProjection(Long id) {
+        List<GameMinProjection> res = gameRepository.searchByList(id);
+        return res.stream().map(GameMinDTO::new).toList();
+    }
 }
