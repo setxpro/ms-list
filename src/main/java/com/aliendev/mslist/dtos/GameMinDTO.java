@@ -1,6 +1,7 @@
 package com.aliendev.mslist.dtos;
 
 import com.aliendev.mslist.entities.Game;
+import org.springframework.beans.BeanUtils;
 
 public class GameMinDTO {
     private Long id;
@@ -10,12 +11,8 @@ public class GameMinDTO {
     private String shortDescription;
 
     public GameMinDTO() {}
-    public GameMinDTO(Game entiti) {
-        id = entiti.getId();
-        title = entiti.getTitle();
-        year = entiti.getYear();
-        imgUrl = entiti.getImgUrl();
-        shortDescription = entiti.getShortDescription();
+    public GameMinDTO(Game entity) {
+        BeanUtils.copyProperties(entity, this);
     }
 
     public Long getId() {
