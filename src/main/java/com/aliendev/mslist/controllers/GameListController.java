@@ -28,6 +28,6 @@ public class GameListController {
 
     @GetMapping(value = "/{id}/games")
     public List<GameMinDTO> searchByListId(@PathVariable Long id) {
-        return gameService.findProjection(id);
+       return gameService.findProjection(id);
     }
 }
