@@ -68,7 +68,8 @@ The API provides the following endpoints:
 
 GET /games - find all games
 GET /games/{id} - find one game
-GET /list/{listId}/games - Find all games from a specific list games
+GET /lists - Find all lists
+GET /lists/{listId}/games - Find all games from a specific list games
 ```
 
 ## Authentication
